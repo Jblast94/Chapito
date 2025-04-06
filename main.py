@@ -8,6 +8,7 @@ from chapito import (
     mistral_chat,
     openai_chat,
     perplexity_chat,
+    inceptionlabs_chat
 )
 from chapito.proxy import init_proxy
 from chapito.tools.tools import check_official_version, greeting
@@ -52,6 +53,10 @@ def main():
     if config.chatbot == Chatbot.DUCKDUCKGO:
         driver = duckduckgo_chat.initialize_driver(config)
         init_proxy(driver, duckduckgo_chat.send_request_and_get_response, config)
+        
+    if config.chatbot == Chatbot.INCEPTIONLABS:
+        driver = inceptionlabs_chat.initialize_driver(config)
+        init_proxy(driver, inceptionlabs_chat.send_request_and_get_response, config)
 
 
 if __name__ == "__main__":

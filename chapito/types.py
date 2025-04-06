@@ -18,3 +18,4 @@ class Chatbot(Enum):
     ANTHROPIC = "anthropic"
     GITHUB = "github"
     DUCKDUCKGO = "duckduckgo"
+    INCEPTIONLABS = "inceptionlabs"
